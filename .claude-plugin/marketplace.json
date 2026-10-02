@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "layman",
+  "description": "Plain-language replies in Claude Code.",
+  "owner": { "name": "Varun Moka" },
+  "plugins": [
+    { "name": "layman", "description": "When a short prompt asks for a plain explanation, attaches plain-reply rules; from the second ask in a session, keeps replies plain.", "source": "./", "category": "productivity" }
+  ]
+}
