@@ -5,8 +5,9 @@ All notable changes to layman are listed here. Versions follow
 
 ## 0.1.3 - 2026-10-03
 
-- README: one-line pitch, who the plugin is for, and how to try the rules
-  without installing.
+- README rewritten in plain words: explains what Claude Code, a plugin, a
+  hook, a skill and plain mode are where they appear, plus who the plugin is
+  for and how to try the rules without installing.
 
 ## 0.1.2 - 2026-10-03
 
