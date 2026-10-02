@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".claude-plugin/icon.png" width="96" alt="layman">
+  <img src="assets/logo/layman-icon.png" width="96" alt="layman">
 </p>
 
 <h1 align="center">layman</h1>
