@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256"><title>layman logo</title><rect width="256" height="256" rx="57.6" fill="#F5F1E6"/><g transform="translate(10.22 5.54) scale(0.919)" fill="#1F2937">
+  <title id="t">layman logo, small sizes</title>
+  <g id="symbol" fill="none" stroke="#1F2937" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 92 176 C 92 158 78 144 64 122 A 60 60 0 0 1 172.4 71.5 L 196 124 L 176 129 L 176 142 L 188 152 L 188 196 A 25 25 0 0 1 140.0 196 A 25 25 0 0 1 92.0 196 "/>
+  </g>
+  <circle cx="166" cy="102" r="10" fill="#1F2937"/>
+</g></svg>

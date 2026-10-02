@@ -3,6 +3,13 @@
 All notable changes to layman are listed here. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## 0.1.4 - 2026-10-03
+
+- New icon: a philosopher's profile drawn with one line, on the cream tile.
+  SVG masters in `assets/logo/`.
+- README cut to what a reader needs: install, the phrases, the commands, how
+  it works, privacy.
+
 ## 0.1.3 - 2026-10-03
 
 - README rewritten in plain words: explains what Claude Code, a plugin, a
