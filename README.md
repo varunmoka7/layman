@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://github.com/varunmoka7/layman/releases"><img src="https://img.shields.io/github/v/release/varunmoka7/layman?style=flat-square&color=111111&label=release" alt="Release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license"></a>
-  <img src="https://img.shields.io/badge/Claude%20Code-plugin-111111?style=flat-square" alt="Claude Code plugin">
+  <a href="https://github.com/varunmoka7/layman/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/varunmoka7/layman/test.yml?style=flat-square&color=111111&label=tests" alt="Tests"></a>
 </p>
 
 ---

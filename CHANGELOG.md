@@ -8,6 +8,7 @@ All notable changes to layman are listed here. Versions follow
 - Manifest keywords and marketplace tags so the plugin is easier to find.
 - README rewritten around install, usage and a before/after example.
 - This changelog.
+- GitHub Actions runs `claude plugin validate` and `claude plugin test` on every push and pull request.
 
 ## 0.1.1 - 2026-10-02
 
