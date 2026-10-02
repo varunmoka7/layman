@@ -18,6 +18,13 @@ In Claude Code, add this marketplace and install the plugin:
 Once layman is listed in the Anthropic plugin directory, you can also find
 and install it there.
 
+## In the Claude apps and Cowork
+
+The hook only runs in Claude Code. The same plain-reply rules ship as a skill
+(`skills/layman/SKILL.md`), so in the Claude apps and Cowork the model applies
+them when you ask for a plain explanation. There the second-ask memory is the
+model's, not a counter.
+
 ## Commands
 
 - `/layman on` turns plain mode on and shows `plain mode` in the status line.
