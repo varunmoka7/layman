@@ -1,19 +1,28 @@
 {
   "name": "layman",
-  "version": "0.1.1",
-  "description": "When a short prompt asks for a plain explanation (layman, im lost, didnt understand), attaches the plain-reply rules for the model; after the second ask in a session, keeps replies plain.",
+  "version": "0.1.2",
+  "description": "Plain-language replies when you ask for them. Say \"layman\", \"I'm lost\" or \"explain again\" and the next reply uses everyday words, one idea, one real example. Ask twice and plain mode stays on for the session; /layman on|off switches it by hand.",
   "author": {
-    "name": "Varun Moka"
+    "name": "Varun Moka",
+    "url": "https://github.com/varunmoka7"
   },
   "license": "MIT",
   "homepage": "https://github.com/varunmoka7/layman",
   "repository": "https://github.com/varunmoka7/layman",
   "keywords": [
     "plain-language",
+    "plain-english",
+    "explain",
     "explanation",
+    "eli5",
     "layman",
+    "beginner",
+    "accessibility",
+    "readability",
     "hooks",
+    "slash-command",
     "claude-code",
-    "accessibility"
+    "claude-code-plugin",
+    "productivity"
   ]
 }

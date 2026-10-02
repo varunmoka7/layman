@@ -1,9 +1,32 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "layman",
-  "description": "Plain-language replies in Claude Code.",
-  "owner": { "name": "Varun Moka" },
+  "description": "Plain-language replies in Claude Code, when you ask for them.",
+  "owner": {
+    "name": "Varun Moka",
+    "url": "https://github.com/varunmoka7"
+  },
   "plugins": [
-    { "name": "layman", "description": "When a short prompt asks for a plain explanation, attaches plain-reply rules; from the second ask in a session, keeps replies plain.", "source": "./", "category": "productivity" }
+    {
+      "name": "layman",
+      "description": "Say \"layman\", \"I'm lost\" or \"explain again\" and the next reply uses everyday words, one idea, one real example. Ask twice and plain mode stays on for the session; /layman on|off switches it by hand.",
+      "author": {
+        "name": "Varun Moka",
+        "url": "https://github.com/varunmoka7"
+      },
+      "source": "./",
+      "homepage": "https://github.com/varunmoka7/layman",
+      "category": "productivity",
+      "tags": [
+        "plain-language",
+        "explain",
+        "eli5",
+        "beginner",
+        "accessibility",
+        "readability",
+        "hooks",
+        "slash-command"
+      ]
+    }
   ]
 }

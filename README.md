@@ -1,94 +1,142 @@
-# layman
+<p align="center">
+  <img src=".claude-plugin/icon.png" width="96" alt="layman">
+</p>
 
-A Claude Code plugin that adds plain-reply rules to the model's context when
-a prompt of 200 characters or less asks for a plain explanation. It matches
-words such as `layman`, `im lost`, `didnt understand`, and `explain again`.
-From the second matching ask in a session, it keeps adding rules for plain
-replies, and the status line shows `plain mode`.
+<h1 align="center">layman</h1>
+
+<p align="center">
+  Plain-language replies in Claude Code, when you ask for them.
+</p>
+
+<p align="center">
+  <a href="https://github.com/varunmoka7/layman/releases"><img src="https://img.shields.io/github/v/release/varunmoka7/layman?style=flat-square&color=111111&label=release" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license"></a>
+  <img src="https://img.shields.io/badge/Claude%20Code-plugin-111111?style=flat-square" alt="Claude Code plugin">
+</p>
+
+---
+
+Type `layman`, `I'm lost` or `explain again` and the next reply comes back in
+everyday words: one idea, one real example from your work, one everyday
+comparison, and at most one yes-or-no question. Ask twice in a session and
+plain mode stays on until you turn it off.
+
+It runs as a `prompt.submit` hook. Nothing leaves your machine.
+
+## Before and after
+
+You asked why a build fails and got a paragraph about peer dependency
+resolution. You type:
+
+```text
+layman
+```
+
+The reply now reads like this:
+
+> Your project asked for two different versions of the same library and npm
+> refused to pick one. It is like two people booking the same seat. Run
+> `npm install react@18` so both sides agree on one version. Want me to run
+> it? I would.
 
 ## Install
-
-In Claude Code, add this marketplace and install the plugin:
 
 ```text
 /plugin marketplace add varunmoka7/layman
 /plugin install layman@layman
 ```
 
-Once layman is listed in the Anthropic plugin directory, you can also find
-and install it there.
+Requires Claude Code 2.1 or later. Once layman is listed in the Anthropic
+plugin directory you can also install it from there.
 
-## In the Claude apps and Cowork
+## Usage
 
-The hook only runs in Claude Code. The same plain-reply rules ship as a skill
-(`skills/layman/SKILL.md`), so in the Claude apps and Cowork the model applies
-them when you ask for a plain explanation. There the second-ask memory is the
-model's, not a counter.
+Just type one of the trigger phrases as your prompt. For a manual switch:
 
-## Commands
+| Command | Effect |
+|---------|--------|
+| `/layman on` | Plain mode on. The status line shows `plain mode`. |
+| `/layman off` | Plain mode off. Clears the status and resets the ask count. |
+| `/layman` | Flips plain mode. |
 
-- `/layman on` turns plain mode on and shows `plain mode` in the status line.
-- `/layman off` turns it off, clears the status, and resets the ask count.
-- `/layman` flips plain mode on or off.
+After `/layman off`, a matching prompt can start plain mode again.
 
-After turning it off, matching prompts can start plain mode again.
+### Trigger phrases
+
+Matching ignores case and only looks at prompts of 200 characters or less,
+because longer prompts that mention these words are usually about something
+else.
+
+- `layman` or `lay man`
+- `im lost`, `I'm lost`, `i am lost`
+- `didn't understand`, `didnt understand`, `dont understand`, `do not
+  understand`, and the typos seen in real transcripts (`didt`, `didit`,
+  `understadn`, `undersatnd`)
+- `explain again`, `explain it again`, `explain that again`, `explain this
+  again`
 
 ## How it works
 
-The plugin keeps an ask counter for each session, starting at zero. Each
-matching prompt adds one. At two or more, plain mode stays on. The commands
-set the counter to two for on or zero for off.
+The plugin keeps one counter per session: how many times you asked for a plain
+explanation. Each matching prompt adds one.
 
-Matching ignores capital letters and checks prompts of at most 200 characters
-for any of these patterns:
+1. **First ask.** The prompt gets a note with the plain-reply rules: everyday
+   words from the first line, one idea, define any working term in the same
+   sentence or drop it, one real example and one everyday comparison, numbered
+   steps if there is a sequence, no findings tables, no new topics, and at most
+   one yes-or-no question with a suggested answer. If the prompt names no
+   topic, the model re-explains its previous reply.
+2. **Second ask and after.** Plain mode is on. Every later prompt gets a shorter
+   note: everyday words from the first line, define working terms as you go.
+   The status line shows `plain mode`.
+3. **`/layman on` and `/layman off`** set the counter to two or zero.
 
-- `layman` or `lay man`.
-- `im lost`, `I'm lost`, or `i am lost`, as whole words.
-- `did not`, `didnt`, `didn't`, `didt`, `didit`, `do not`, `dont`, or `don't`,
-  followed by whitespace and a word starting with `unders`. This includes
-  `understand`, `understadn`, and `undersatnd`.
-- `explain again`, optionally with `it`, `that`, or `this` before `again`.
+Prompts that do not match pass through untouched.
 
-It adds one of two notes to the prompt's existing context:
+## In the Claude apps and Cowork
 
-- For a matching ask, use everyday words and one idea. If no topic is named,
-  explain the previous reply again. Define working terms in the same sentence
-  or leave them out. Use one real example and one everyday comparison. Number
-  steps when needed, avoid findings tables and new topics, and end with at most
-  one yes-or-no question with a suggested answer.
-- For other prompts while plain mode is on, use everyday words from the first
-  line and define working terms in the same sentence.
-
-Otherwise, the plugin passes the prompt through without adding a note.
+The hook only runs in Claude Code. The same rules ship as a skill in
+`skills/layman/SKILL.md`, so in the Claude apps and Cowork the model applies
+them when you ask for a plain explanation. There the second-ask memory is the
+model's own, not a counter.
 
 ## Privacy
 
-The plugin runs entirely on your machine. It reads only the prompt text you
-type to check for a match and stores one number per session: the ask count.
-It sends nothing anywhere and makes no network calls. The notes become part
-of the context Claude Code gives the model.
-
-## Security
-
-Report security issues through
-[GitHub private vulnerability reporting](https://github.com/varunmoka7/layman/security/advisories/new).
+Everything runs locally. The plugin reads the prompt text you type to check
+for a match and stores one number per session, the ask count. It makes no
+network calls and sends nothing anywhere. The notes it adds become part of the
+context Claude Code already gives the model.
 
 ## Development
-
-Run the tests and validate the plugin from this folder:
 
 ```sh
 claude plugin test .
 claude plugin validate .
 ```
 
-## Status
+The tests cover the trigger phrases and near misses, plain mode after the
+second ask, and the command switches. Tested on macOS with Claude Code 2.1.288.
 
-Tested on macOS with Claude Code 2.1.288, as reported by `claude --version`.
-All three tests passed. Plugin validation passed.
-The tests cover matching prompts, plain mode after the second ask, command
-switches, and prompts that should not match.
+Layout:
+
+```text
+.claude-plugin/   plugin.json, marketplace.json, icon
+hooks/            register.ts (the hook and the /layman command)
+skills/layman/    SKILL.md for the Claude apps and Cowork
+tests/            claude plugin test suite
+```
+
+## Contributing
+
+Issues and pull requests are welcome. If you add a trigger phrase, add it to
+the hits list in `tests/layman.test.ts` and to the list above. Keep the plugin
+small: one hook, one command, no network.
+
+## Security
+
+Report security issues through
+[GitHub private vulnerability reporting](https://github.com/varunmoka7/layman/security/advisories/new).
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+[MIT](LICENSE)
