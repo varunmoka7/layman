@@ -2,10 +2,18 @@
   "name": "layman",
   "version": "0.1.0",
   "description": "When a short prompt asks for a plain explanation (layman, im lost, didnt understand), attaches the plain-reply rules for the model; after the second ask in a session, keeps replies plain.",
-  "author": { "name": "Varun Moka" },
+  "author": {
+    "name": "Varun Moka"
+  },
   "license": "MIT",
   "homepage": "https://github.com/varunmoka7/layman",
   "repository": "https://github.com/varunmoka7/layman",
-  "keywords": ["plain-language", "explanation", "layman", "hooks", "claude-code", "accessibility"],
-  "types": "./types/index.d.ts"
+  "keywords": [
+    "plain-language",
+    "explanation",
+    "layman",
+    "hooks",
+    "claude-code",
+    "accessibility"
+  ]
 }
