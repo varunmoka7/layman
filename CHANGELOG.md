@@ -3,6 +3,11 @@
 All notable changes to layman are listed here. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## 0.1.3 - 2026-10-03
+
+- README: one-line pitch, who the plugin is for, and how to try the rules
+  without installing.
+
 ## 0.1.2 - 2026-10-03
 
 - Manifest keywords and marketplace tags so the plugin is easier to find.

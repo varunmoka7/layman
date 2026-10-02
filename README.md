@@ -5,7 +5,7 @@
 <h1 align="center">layman</h1>
 
 <p align="center">
-  Plain-language replies in Claude Code, when you ask for them.
+  Say <em>I'm lost</em> and Claude explains it again, plainly.
 </p>
 
 <p align="center">
@@ -16,12 +16,18 @@
 
 ---
 
-Type `layman`, `I'm lost` or `explain again` and the next reply comes back in
+You ask Claude Code why something failed and get four paragraphs of jargon.
+Type `layman`, `I'm lost` or `explain again`. The next reply comes back in
 everyday words: one idea, one real example from your work, one everyday
 comparison, and at most one yes-or-no question. Ask twice in a session and
 plain mode stays on until you turn it off.
 
-It runs as a `prompt.submit` hook. Nothing leaves your machine.
+It is one small hook that runs on your machine. Nothing is sent anywhere.
+
+**Who it is for.** Anyone who uses Claude Code without reading stack traces
+for a living: product and data people, students, writers, and anyone whose
+first language is not English. If you have ever read a reply twice and then
+quietly asked a colleague, this is the button for that moment.
 
 ## Before and after
 
@@ -48,6 +54,10 @@ The reply now reads like this:
 
 Requires Claude Code 2.1 or later. Once layman is listed in the Anthropic
 plugin directory you can also install it from there.
+
+**Try it without installing.** Paste the six rules from
+[`skills/layman/SKILL.md`](skills/layman/SKILL.md) into any Claude chat and
+ask for a plain explanation. That is the same text the hook attaches.
 
 ## Usage
 

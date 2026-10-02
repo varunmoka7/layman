@@ -1,6 +1,6 @@
 {
   "name": "layman",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Plain-language replies when you ask for them. Say \"layman\", \"I'm lost\" or \"explain again\" and the next reply uses everyday words, one idea, one real example. Ask twice and plain mode stays on for the session; /layman on|off switches it by hand.",
   "author": {
     "name": "Varun Moka",
