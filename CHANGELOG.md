@@ -3,6 +3,11 @@
 All notable changes to layman are listed here. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## 0.1.5 - 2026-10-04
+
+- Fix: `plugin.json` now points at `types/index.d.ts`, so `claude plugin validate`
+  finds the `layman.asks` state declaration. It failed on 2.1.288 without it.
+
 ## 0.1.4 - 2026-10-03
 
 - New icon: a philosopher's profile drawn with one line, on the cream tile.
