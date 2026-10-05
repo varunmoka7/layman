@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "layman",
-  "description": "Plain-language replies in Claude Code, when you ask for them.",
+  "description": "Say \"I'm lost\" and Claude explains its last reply again in everyday words. A Claude Code plugin.",
   "owner": {
     "name": "Varun Moka",
     "url": "https://github.com/varunmoka7"
