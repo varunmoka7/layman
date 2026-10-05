@@ -1,7 +1,7 @@
 {
   "name": "layman",
   "version": "0.1.5",
-  "description": "Plain-language replies when you ask for them. Say \"layman\", \"I'm lost\" or \"explain again\" and the next reply uses everyday words, one idea, one real example. Ask twice and plain mode stays on for the session; /layman on|off switches it by hand.",
+  "description": "Say \"I'm lost\" and Claude explains its last reply again in everyday words. A Claude Code plugin.",
   "author": {
     "name": "Varun Moka",
     "url": "https://github.com/varunmoka7"
