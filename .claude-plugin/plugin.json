@@ -10,20 +10,22 @@
   "homepage": "https://github.com/varunmoka7/layman",
   "repository": "https://github.com/varunmoka7/layman",
   "keywords": [
-    "plain-language",
-    "plain-english",
+    "accessibility",
+    "beginner",
+    "claude-code",
+    "claude-code-mod",
+    "claude-code-plugin",
+    "eli5",
     "explain",
     "explanation",
-    "eli5",
-    "layman",
-    "beginner",
-    "accessibility",
-    "readability",
+    "function-hooks",
     "hooks",
-    "slash-command",
-    "claude-code",
-    "claude-code-plugin",
-    "productivity"
+    "layman",
+    "plain-english",
+    "plain-language",
+    "productivity",
+    "readability",
+    "slash-command"
   ],
   "types": "./types/index.d.ts"
 }
